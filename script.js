@@ -1,6 +1,6 @@
 const playingClass = 'playing',
-crashRide = document.getElementById('crash-ride'),
-hiHatTop = document.getElementById('hihat-top');
+    crashRide = document.getElementById('crash-ride'),
+    hiHatTop = document.getElementById('hihat-top');
 const animateCrashOrRide = () => {
     crashRide.style.transform = 'rotate(0deg) scale(1.5)';
 };
@@ -9,17 +9,17 @@ const animateHiHatClosed = () => {
 };
 const playSound = e => {
     const keyCode = e.keyCode,
-    keyElement = document.querySelector(`div[data-key="${keyCode}"]`);
+        keyElement = document.querySelector(`div[data-key="${keyCode}"]`);
     if (!keyElement) return;
     const audioElement = document.querySelector(`audio[data-key="${keyCode}"]`);
     audioElement.currentTime = 0;
     audioElement.play();
-    switch(keyCode) {
+    switch (keyCode) {
         case 69:
             case82:
             animateCrashOrRide();
             break;
-            case 75: animateHiHatClosed();
+        case 75: animateHiHatClosed();
             break;
     }
     keyElement.classList.add(playingClass);
